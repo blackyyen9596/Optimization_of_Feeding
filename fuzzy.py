@@ -48,11 +48,11 @@ grade_system = ctrl.ControlSystemSimulation(grade_ctrl)
 
 
 # %%
-grade_system.input['Area(cm2)'] = 4 #0-10
-grade_system.input['Quantity'] = 5 #8-10
+grade_system.input['Area(cm2)'] = 22 #0-10
+grade_system.input['Quantity'] = 1 #8-10
 grade_system.compute()
 # view
 grade.view(sim=grade_system)
-# print(grade_system.output['feed(g)'])
+print(grade_system.output['feed(g)'])
 
 plt.pause(0)

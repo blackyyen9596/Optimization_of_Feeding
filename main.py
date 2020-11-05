@@ -5,7 +5,7 @@ from matplotlib import pyplot as plt
 
 
 def main():
-    image = cv2.imread('image/crop/area_50%_2.jpg')
+    image = cv2.imread('shirmp/crop/shirmp_1.jpg')
     hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
     h = get_h(hsv)
     # resize
