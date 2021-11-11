@@ -70,7 +70,7 @@ def main():
     cv2.waitKey(0)
     cv2.destroyAllWindows()
 
-    
+
 def get_h(img):
     Img = img[:, :, 0]
     return Img
@@ -108,11 +108,15 @@ def get_NumOfTotalPixel(image):
     TotalPixel = 0
     for width in range(image_width):
         for height in range(image_height):
-            if((image[height, width, 0] >= 225) & (image[height, width, 1] >= 225) & (image[height, width, 2] >= 225)):
+            if ((image[height, width, 0] >= 225) &
+                (image[height, width, 1] >= 225) &
+                (image[height, width, 2] >= 225)):
                 image[height, width, 0] = 255
                 image[height, width, 1] = 255
                 image[height, width, 2] = 255
-            if((image[height, width, 0] != 255) & (image[height, width, 1] != 255) & (image[height, width, 2] != 255)):
+            if ((image[height, width, 0] != 255) &
+                (image[height, width, 1] != 255) &
+                (image[height, width, 2] != 255)):
                 TotalPixel += 1
     print("TotalPixel=", TotalPixel)
     return TotalPixel
@@ -126,14 +130,18 @@ def ratio(image, totalPixel, color_series):
     colorPixel = 0
     for width in range(image_width):
         for height in range(image_height):
-            if((color_series[height, width, 0] <= 10) & (color_series[height, width, 1] <= 10) & (color_series[height, width, 2] <= 10)):
+            if ((color_series[height, width, 0] <= 10) &
+                (color_series[height, width, 1] <= 10) &
+                (color_series[height, width, 2] <= 10)):
                 color_series[height, width, 0] = 0
                 color_series[height, width, 1] = 0
                 color_series[height, width, 2] = 0
-            if((color_series[height, width, 0] != 0) & (color_series[height, width, 1] != 0) & (color_series[height, width, 2] != 0)):
+            if ((color_series[height, width, 0] != 0) &
+                (color_series[height, width, 1] != 0) &
+                (color_series[height, width, 2] != 0)):
                 colorPixel += 1
     # 計算比率
-    cal = (colorPixel/totalPixel)*100
+    cal = (colorPixel / totalPixel) * 100
 
     return cal
 
